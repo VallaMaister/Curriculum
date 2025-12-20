@@ -1,5 +1,5 @@
 /**
-* Template Name: DevFolio - v4.7.1
+* Template Name: DevFolio - v4.7.1 (Enhanced with Modern DevOps Design)
 * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -9,8 +9,10 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
   color: #4e4e4e;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1,
@@ -20,17 +22,19 @@ h4,
 h5,
 h6 {
   color: #1e1e1e;
+  font-weight: 600;
 }
 
 a {
   color: #1e1e1e;
   text-decoration: none;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 a:hover {
   color: #0078ff;
   text-decoration: none;
-  transition: all 0.5s ease-in-out;
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .p-r {
@@ -191,10 +195,13 @@ a:hover {
 .box-shadow-full {
   padding: 3rem 1.25rem;
   position: relative;
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
   margin-bottom: 3rem;
   z-index: 2;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 120, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 120, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 @media (min-width: 768px) {
   .box-shadow-full {
@@ -754,57 +761,142 @@ a:hover {
 }
 
 .skill-mf span {
-  color: #4e4e4e;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 14px;
 }
+
 .skill-mf .progress {
-  background-color: #cde1f8;
+  background: linear-gradient(90deg, #f8f9ff 0%, #e3f2fd 100%);
   margin: 0.5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: 0.7rem;
+  border-radius: 20px;
+  height: 12px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 120, 255, 0.1);
+  overflow: hidden;
+  position: relative;
 }
+
 .skill-mf .progress .progress-bar {
-  height: 0.7rem;
-  background-color: #0078ff;
+  height: 12px;
+  background: linear-gradient(90deg, #0078ff 0%, #00d4aa 100%);
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 120, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-mf .progress .progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.skill-mf .title-s {
+  background: linear-gradient(135deg, #0078ff, #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 1.5rem;
 }
 
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 .service-box {
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
   padding: 2.5rem 1.3rem;
-  border-radius: 1rem;
+  border-radius: 20px;
   margin-bottom: 3rem;
   text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.1);
+  border: 1px solid rgba(0, 120, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+.service-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 120, 255, 0.1), transparent);
+  transition: all 0.6s ease;
+}
+
+.service-box:hover::before {
+  left: 100%;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 120, 255, 0.2);
+  border-color: rgba(0, 120, 255, 0.3);
+}
+
 .service-box:hover .ico-circle {
   transition: all 500ms ease;
   color: #fff;
-  background-color: #0078ff;
-  box-shadow: 0 0 0 10px #cde1f8;
+  background: linear-gradient(135deg, #0078ff 0%, #00d4aa 100%);
+  box-shadow: 0 0 0 10px rgba(0, 120, 255, 0.2);
+  transform: scale(1.1) rotate(5deg);
 }
+
 .service-box .service-ico {
   margin-bottom: 1rem;
   color: #1e1e1e;
+  position: relative;
+  z-index: 2;
 }
+
 .service-box .ico-circle {
-  transition: all 500ms ease;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  border: 2px solid rgba(0, 120, 255, 0.2);
 }
+
 .service-box .ico-circle i {
   line-height: 0;
   font-size: 40px;
 }
+
 .service-box .s-title {
   font-size: 1.4rem;
   text-transform: uppercase;
   text-align: center;
   padding: 0.4rem 0;
+  background: linear-gradient(135deg, #0078ff, #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
 }
+
 .service-box .s-description {
   color: #4e4e4e;
+  position: relative;
+  z-index: 2;
+  line-height: 1.6;
 }
 
 /*--------------------------------------------------------------
@@ -1286,13 +1378,103 @@ footer {
   text-align: center;
   color: #fff;
   padding: 25px 0;
-  background: #0062d3;
+  background: linear-gradient(135deg, #0062d3 0%, #0078ff 100%);
 }
 footer .copyright {
   margin-bottom: 0.3rem;
 }
 footer .credits {
   margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Modern Enhancements & DevOps Theme
+--------------------------------------------------------------*/
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Improved Mobile Responsiveness */
+@media (max-width: 768px) {
+  .service-box {
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .skill-mf .progress {
+    height: 10px;
+  }
+  
+  .skill-mf .progress .progress-bar {
+    height: 10px;
+  }
+}
+
+/* Enhanced Animations */
+.service-box,
+.work-box,
+.box-shadow-full {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modern Card Hover Effects */
+.work-box {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 120, 255, 0.1);
+}
+
+.work-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 120, 255, 0.15);
+}
+
+/* Enhanced Typography */
+.hero-title {
+  background: linear-gradient(135deg, #0078ff, #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.title-a {
+  background: linear-gradient(135deg, #0078ff, #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modern Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #0078ff 0%, #00d4aa 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 120, 255, 0.4);
 }
 footer .credits a {
   color: #fff;

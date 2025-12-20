@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Curriculum Vita Oscar Valladares</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Oscar Valladares | DevOps Engineer & Full Stack Developer</title>
+  <meta content="DevOps Engineer especializado en CI/CD, Kubernetes, Docker, Azure, AWS y SAP Business One" name="description">
+  <meta content="DevOps, Kubernetes, Docker, Azure, AWS, SAP, Full Stack Developer, Cloud Engineer" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,414 +25,996 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: DevFolio - v4.7.1
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --dark-bg: #0f0f23;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --text-primary: #ffffff;
+      --text-secondary: #b4b4b4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #16213e 100%);
+    }
+
+    .animated-bg::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+      top: -250px;
+      right: -250px;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .animated-bg::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(245, 87, 108, 0.1) 0%, transparent 70%);
+      bottom: -200px;
+      left: -200px;
+      animation: float 15s infinite ease-in-out reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -50px) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+
+    /* Modern Navigation */
+    .modern-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 0;
+      background: rgba(15, 15, 35, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modern-nav.scrolled {
+      padding: 15px 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gradient);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero-modern {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 40px 80px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text .role {
+      font-size: 28px;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+
+    .hero-text .role span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-modern {
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-primary-modern {
+      background: var(--primary-gradient);
+      color: white;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary-modern:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+    }
+
+    .btn-outline-modern {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-outline-modern:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Hero Image */
+    .hero-visual {
+      position: relative;
+    }
+
+    .profile-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: var(--primary-gradient);
+      opacity: 0.1;
+    }
+
+    .profile-img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Tech Stack Section */
+    .tech-stack {
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-title h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .section-title p {
+      font-size: 18px;
+      color: var(--text-secondary);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .tech-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-gradient);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .tech-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .tech-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .tech-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tech-card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .tech-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      padding: 8px 16px;
+      background: rgba(102, 126, 234, 0.1);
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      border-radius: 20px;
+      font-size: 13px;
+      color: #667eea;
+    }
+
+    /* Experience Timeline */
+    .experience-section {
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, #667eea, transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+      padding-left: 40px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -56px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .timeline-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      border-color: rgba(102, 126, 234, 0.5);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .timeline-title h3 {
+      font-size: 24px;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .timeline-company {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .timeline-date {
+      color: #667eea;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .timeline-description {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateX(10px);
+      border-color: rgba(102, 126, 234, 0.5);
+    }
+
+    .contact-icon {
+      font-size: 32px;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: var(--primary-gradient);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .hero-text h1 {
+        font-size: 48px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .hero-text .role {
+        font-size: 20px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .nav-container {
+        padding: 0 20px;
+      }
+
+      .hero-modern {
+        padding: 100px 20px 60px;
+      }
+
+      .tech-stack, .experience-section, .contact-section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+  <!-- Modern Navigation -->
+  <nav class="modern-nav">
+    <div class="nav-container">
+      <div class="logo">Oscar Valladares</div>
+      <ul class="nav-links">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#certifications">Certificaciones</a></li>
+        <li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
 
-      <h1 class="logo"><a href="index.html">Curriculum</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  <!-- Hero Section -->
+  <section id="home" class="hero-modern">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Oscar Valladares</h1>
+        <p class="role">Soy <span id="typed-role"></span></p>
+        <p class="hero-description">
+          DevOps Engineer especializado en automatización, CI/CD y arquitecturas cloud en AWS. 
+          Transformo procesos de desarrollo en flujos eficientes y escalables utilizando 
+          servicios nativos de AWS como EKS, ECS, Amplify, CodePipeline, CloudFormation y Lambda.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-modern btn-primary-modern">Contáctame</a>
+          <a href="#experience" class="btn-modern btn-outline-modern">Ver Experiencia</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="profile-card">
+          <img src="assets/img/foto.jpg" alt="Oscar Valladares" class="profile-img">
+          <div class="profile-stats">
+            <div class="stat-item">
+              <div class="stat-number">8+</div>
+              <div class="stat-label">Años Exp.</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Proyectos</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Tecnologías</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sobre mi</a></li>
-          <li><a class="nav-link scrollto" href="#services">Aptitudes</a></li>
-          <li><a class="nav-link scrollto " href="#work">Trabajos</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+  <!-- Certifications Section -->
+  <section id="certifications" class="tech-stack" style="padding-top: 60px;">
+    <div class="section-title">
+      <h2>Certificaciones y Acreditaciones</h2>
+      <p>Certificaciones que validan mi expertise técnico</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+      
+      <div class="tech-card" style="text-align: center; padding: 30px;">
+        <div style="margin-bottom: 20px; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="assets/badge/aws-certified-cloud-practitioner.png" alt="AWS Cloud Practitioner" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="color: #ffffff; margin-bottom: 10px; font-size: 18px;">AWS Certified Cloud Practitioner</h3>
+        <div class="skill-tag" style="background: rgba(255, 153, 0, 0.1); border-color: rgba(255, 153, 0, 0.3); color: #FF9900; display: inline-block;">Fundamentos Cloud</div>
+      </div>
+
+      <div class="tech-card" style="text-align: center; padding: 30px;">
+        <div style="margin-bottom: 20px; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="assets/badge/aws-certified-developer-associate.png" alt="AWS Developer Associate" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="color: #ffffff; margin-bottom: 10px; font-size: 18px;">AWS Certified Developer Associate</h3>
+        <div class="skill-tag" style="background: rgba(255, 153, 0, 0.1); border-color: rgba(255, 153, 0, 0.3); color: #FF9900; display: inline-block;">Desarrollo Cloud</div>
+      </div>
+
+      <div class="tech-card" style="text-align: center; padding: 30px;">
+        <div style="margin-bottom: 20px; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="assets/badge/sap-certified-associate-integration-developer.png" alt="SAP Integration Developer" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="color: #ffffff; margin-bottom: 10px; font-size: 18px;">SAP Certified Integration Developer</h3>
+        <div class="skill-tag" style="background: rgba(0, 143, 211, 0.1); border-color: rgba(0, 143, 211, 0.3); color: #008FD3; display: inline-block;">Enterprise Development</div>
+      </div>
+
+      <div class="tech-card" style="text-align: center; padding: 30px;">
+        <div style="margin-bottom: 20px; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="assets/badge/aws-knowledge-amazon-q-developer-fundamentals-train.png" alt="Amazon Q Developer" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="color: #ffffff; margin-bottom: 10px; font-size: 18px;">Amazon Q Developer Fundamentals</h3>
+        <div class="skill-tag" style="background: rgba(102, 126, 234, 0.1); border-color: rgba(102, 126, 234, 0.3); color: #667eea; display: inline-block;">AI Development</div>
+      </div>
+
+      <div class="tech-card" style="text-align: center; padding: 30px;">
+        <div style="margin-bottom: 20px; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="assets/badge/aws-partner-generative-ai-essentials-training-badge.png" alt="Generative AI Essentials" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="color: #ffffff; margin-bottom: 10px; font-size: 18px;">AWS Generative AI Essentials</h3>
+        <div class="skill-tag" style="background: rgba(245, 87, 108, 0.1); border-color: rgba(245, 87, 108, 0.3); color: #f5576c; display: inline-block;">Generative AI</div>
+      </div>
+
+      <div class="tech-card" style="text-align: center; padding: 30px;">
+        <div style="margin-bottom: 20px; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="assets/badge/aws-partner-cloud-economics-essentials-training-bad.png" alt="Cloud Economics" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="color: #ffffff; margin-bottom: 10px; font-size: 18px;">AWS Cloud Economics Essentials</h3>
+        <div class="skill-tag" style="background: rgba(0, 242, 254, 0.1); border-color: rgba(0, 242, 254, 0.3); color: #00f2fe; display: inline-block;">Cloud Economics</div>
+      </div>
+
+      <div class="tech-card" style="text-align: center; padding: 30px;">
+        <div style="margin-bottom: 20px; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="assets/badge/aws-partner-sales-accreditation-training-badge.png" alt="Sales Accreditation" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="color: #ffffff; margin-bottom: 10px; font-size: 18px;">AWS Partner Sales Accreditation</h3>
+        <div class="skill-tag" style="background: rgba(102, 126, 234, 0.1); border-color: rgba(102, 126, 234, 0.3); color: #667eea; display: inline-block;">Business Skills</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="tech" class="tech-stack">
+    <div class="section-title">
+      <h2>Tech Stack & Expertise</h2>
+      <p>Tecnologías y herramientas que domino para crear soluciones robustas</p>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-gear-fill"></i></div>
+        <h3>DevOps & CI/CD</h3>
+        <p>Implementación de pipelines automatizados con servicios nativos de AWS para integración y entrega continua.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS CodePipeline</span>
+          <span class="skill-tag">AWS CodeBuild</span>
+          <span class="skill-tag">AWS Amplify</span>
+          <span class="skill-tag">CodeDeploy</span>
+          <span class="skill-tag">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-box-seam"></i></div>
+        <h3>Containerización & Orquestación</h3>
+        <p>Diseño y gestión de aplicaciones containerizadas con arquitecturas de microservicios escalables.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">Helm</span>
+          <span class="skill-tag">Docker Compose</span>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-cloud-fill"></i></div>
+        <h3>AWS Cloud Platform</h3>
+        <p>Arquitectura, despliegue y gestión de infraestructura en AWS con servicios nativos de la nube.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS EC2</span>
+          <span class="skill-tag">AWS Lambda</span>
+          <span class="skill-tag">AWS ECS/EKS</span>
+          <span class="skill-tag">AWS S3</span>
+          <span class="skill-tag">AWS RDS</span>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-code-square"></i></div>
+        <h3>Infrastructure as Code</h3>
+        <p>Automatización de infraestructura en AWS mediante CloudFormation y CDK, garantizando consistencia y reproducibilidad.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">CloudFormation</span>
+          <span class="skill-tag">AWS CDK</span>
+          <span class="skill-tag">AWS SAM</span>
+          <span class="skill-tag">CloudWatch</span>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-layers-fill"></i></div>
+        <h3>Full Stack Development</h3>
+        <p>Desarrollo de aplicaciones web completas con tecnologías modernas y mejores prácticas.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">.NET Core</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-database-fill"></i></div>
+        <h3>Databases & SAP</h3>
+        <p>Gestión de bases de datos empresariales y especialización en SAP Business One con SDK.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">SAP B1</span>
+          <span class="skill-tag">SAP SDK</span>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-graph-up-arrow"></i></div>
+        <h3>Monitoring & Observability</h3>
+        <p>Implementación de sistemas de monitoreo y observabilidad en AWS para mantener aplicaciones saludables.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">CloudWatch</span>
+          <span class="skill-tag">Prometheus</span>
+          <span class="skill-tag">Grafana</span>
+          <span class="skill-tag">AWS X-Ray</span>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-icon"><i class="bi bi-shield-check"></i></div>
+        <h3>Security & Best Practices</h3>
+        <p>Implementación de seguridad en todos los niveles del ciclo de desarrollo y despliegue.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">DevSecOps</span>
+          <span class="skill-tag">SSL/TLS</span>
+          <span class="skill-tag">OAuth</span>
+          <span class="skill-tag">Security Scanning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience-section">
+    <div class="section-title">
+      <h2>Experiencia Profesional</h2>
+      <p>Mi trayectoria en el mundo de la tecnología</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">
+              <h3>DevOps Engineer</h3>
+              <p class="timeline-company">Tesselar Soluciones SA de CV</p>
+            </div>
+            <span class="timeline-date">Marzo 2025 - Actualidad</span>
+          </div>
+          <div class="timeline-description">
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Implementación de pipelines CI/CD con AWS CodePipeline, CodeBuild y Amplify para automatización completa del ciclo de desarrollo</li>
+              <li>Despliegue y gestión de aplicaciones web con AWS Amplify para desarrollo full-stack acelerado</li>
+              <li>Gestión de clusters EKS (Elastic Kubernetes Service) en producción con alta disponibilidad y auto-escalado</li>
+              <li>Desarrollo de Infrastructure as Code usando CloudFormation y AWS CDK para gestión de recursos</li>
+              <li>Implementación de monitoreo con CloudWatch, Prometheus y Grafana para observabilidad completa</li>
+              <li>Optimización de costos AWS mediante análisis de recursos, right-sizing y políticas de ahorro</li>
+              <li>Despliegue de aplicaciones containerizadas en ECS y EKS con arquitecturas de microservicios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">
+              <h3>Advanced Developer</h3>
+              <p class="timeline-company">Tesselar Soluciones SA de CV</p>
+            </div>
+            <span class="timeline-date">Sep 2022 - Feb 2025</span>
+          </div>
+          <div class="timeline-description">
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Desarrollo de aplicaciones empresariales con SAP Business One SDK (UI API y DI API)</li>
+              <li>Creación de addendas fiscales electrónicas para múltiples clientes corporativos (Walmart, Soriana, Bimbo, etc.)</li>
+              <li>Desarrollo de sistemas de integración con APIs externas (Salesforce, Handy, SisPro)</li>
+              <li>Implementación de soluciones .NET Core para automatización de procesos empresariales</li>
+              <li>Diseño y optimización de consultas SQL complejas y procedimientos almacenados</li>
+              <li>Liderazgo técnico de equipo de desarrollo en proyectos de alta complejidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">
+              <h3>Coordinador de TI</h3>
+              <p class="timeline-company">Coco Colima SA de CV</p>
+            </div>
+            <span class="timeline-date">Sep 2017 - Sep 2022</span>
+          </div>
+          <div class="timeline-description">
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Administración completa de infraestructura TI (servidores, redes, SAP Business One)</li>
+              <li>Implementación de SAP Business One y desarrollo de personalizaciones empresariales</li>
+              <li>Gestión de proyectos de transformación digital y migración a la nube</li>
+              <li>Desarrollo de portales web para gestión de inventarios y compras</li>
+              <li>Implementación de soluciones CFDI 4.0 para facturación electrónica</li>
+              <li>Liderazgo de equipo de TI y capacitación de usuarios finales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-title">
+              <h3>Jefe de Sistemas</h3>
+              <p class="timeline-company">Surtidora Ferretera</p>
+            </div>
+            <span class="timeline-date">Ene 2017 - Sep 2017</span>
+          </div>
+          <div class="timeline-description">
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Administración de servidores Windows Server y SQL Server</li>
+              <li>Desarrollo de reportes personalizados y automatización de procesos</li>
+              <li>Soporte técnico especializado en SAP Business One</li>
+              <li>Gestión de backups y seguridad de la información</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-title">
+      <h2>Ponte en Contacto</h2>
+      <p>¿Interesado en colaborar? Me encantaría saber de ti</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="bi bi-geo-alt-fill contact-icon"></i>
+          <div>
+            <h4 style="color: #ffffff;">Ubicación</h4>
+            <p style="color: var(--text-secondary); margin: 0;">Villa de Álvarez, Colima, México</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="bi bi-envelope-fill contact-icon"></i>
+          <div>
+            <h4 style="color: #ffffff;">Email</h4>
+            <p style="color: var(--text-secondary); margin: 0;">oscar_valladares@outlook.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="bi bi-phone-fill contact-icon"></i>
+          <div>
+            <h4 style="color: #ffffff;">Teléfono</h4>
+            <p style="color: var(--text-secondary); margin: 0;">(313) 147-0806</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 20px; color: #ffffff;">Redes Sociales</h4>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/oscar-eduardo-valladares-calleros-362157154/" class="social-link" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/c/TecnologiasMaster" class="social-link" target="_blank">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://github.com/VallaMaister" class="social-link" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: var(--card-bg); backdrop-filter: blur(20px); border-radius: 20px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <h3 style="margin-bottom: 20px; color: #ffffff;">¿Por qué trabajar conmigo?</h3>
+        <ul style="color: var(--text-secondary); line-height: 2;">
+          <li>✨ <strong>Experiencia Comprobada:</strong> Más de 8 años transformando ideas en soluciones tecnológicas</li>
+          <li>🚀 <strong>Tecnologías Modernas:</strong> Siempre actualizado con las últimas herramientas DevOps y Cloud</li>
+          <li>💼 <strong>Visión Empresarial:</strong> Entiendo el negocio además de la tecnología</li>
+          <li>🎯 <strong>Enfoque en Resultados:</strong> Comprometido con la entrega de valor real</li>
+          <li>🤝 <strong>Colaboración Efectiva:</strong> Excelentes habilidades de comunicación y trabajo en equipo</li>
+          <li>📚 <strong>Aprendizaje Continuo:</strong> Constantemente mejorando y aprendiendo nuevas tecnologías</li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">Oscar Valladares</h1>
-          <p class="hero-subtitle"><span class="typed" data-typed-items="Programador, Diseñador, Administrador SAP B1, Analista de datos"></span></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
-        </div>
       </div>
     </div>
-  </div><!-- End Hero Section -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="assets/img/foto.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Nombre: </span> <span>Oscar Eduardo Valladares Calleros</span></p>
-                        <p><span class="title-s">Perfil: </span> <span>Programador</span></p>
-                        <p><span class="title-s">Correo: </span> <span>oscar_valladares@outlook.com</span></p>
-                        <p><span class="title-s">Telefono: </span> <span>(313) 147-0806</span></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skill</p>
-                    <span>SAP Business One</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>SDK SAP Business One</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>SQL</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Gestión de Proyectos de TI </span> <span class="pull-right">90%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Desarrollo Web</span> <span class="pull-right">85%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Administrador de Servidores</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        Sobre mi
-                      </h5>
-                    </div>
-                    <p class="lead">
-                      Ingeniero en Sistemas Computacionales con más de 8 años de experiencia en la administración de servidores Windows, 
-                      SAP Business One y SQL Server. Tengo una sólida trayectoria en el desarrollo de aplicaciones utilizando el SDK de SAP BO, 
-                      así como en la integración con API's y soluciones web.
-                    </p>
-                    <p class="lead">
-                      Durante mi carrera, he liderado equipos de desarrollo, 
-                      gestionado proyectos complejos y optimizado procesos empresariales a través de soluciones tecnológicas innovadoras. 
-                      He trabajado en proyectos destacados como la implementación de desarrollos para el CFDI 4.0, integraciones con Salesforce, 
-                      y la creación de portales web de gestión de inventarios y compras.
-                    </p>
-                    <p class="lead">
-                      Mi experiencia abarca desde el desarrollo de aplicaciones y mantenimiento de infraestructuras tecnológicas, 
-                      hasta el soporte técnico y capacitación de usuarios. Soy un profesional orientado al servicio, 
-                      capaz de trabajar bajo presión y con una fuerte capacidad de comunicación y gestión de equipos.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Aptitudes
-              </h3>
-              <p class="subtitle-a">
-                Todas las tecnologias que actualmente manejo
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          
-          <div class="col-md-6">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-code-slash"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Personalizaciones de SAP Business One</h2>
-                <p class="s-description text-center">
-                  Desarrollo soluciones a medida y personalización de SAP Business One, incluyendo la creación de add-ons, integraciones con API's y automatización de procesos empresariales.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-code-square"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Desarrollo Web y Aplicaciones</h2>
-                <p class="s-description text-center">
-                  Experiencia en el desarrollo de páginas web y aplicaciones utilizando 
-                  HTML5, CSS3, JavaScript, jQuery, y otras tecnologías web modernas, 
-                  asegurando una excelente experiencia de usuario.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Gestión de Proyectos de TI</h2>
-                <p class="s-description text-center">
-                  Experto en liderar proyectos de desarrollo de software, 
-                  desde la planificación y asignación de tareas hasta la implementación y seguimiento, 
-                  asegurando el cumplimiento de plazos y objetivos.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Análisis y Gestión de Datos</h2>
-                <p class="s-description text-center">
-                  Capacidad para extraer, analizar y presentar datos de manera efectiva, 
-                  utilizando consultas SQL y herramientas de reporte para apoyar la toma de decisiones estratégicas.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-6">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-rss"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Administración de Sistemas y Servidores</h2>
-                <p class="s-description text-center">
-                  Administración de servidores Windows y SQL Server, 
-                  incluyendo la instalación, configuración, 
-                  mantenimiento y seguridad de la infraestructura tecnológica.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-patch-question"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Soporte Técnico y Capacitación</h2>
-                <p class="s-description">
-                  Provisión de soporte técnico a usuarios de SAP Business One y otros sistemas, 
-                  además de la capacitación de personal para asegurar un uso eficiente de las herramientas tecnológicas.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- End Services Section -->
-
-    <section id="work" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Trabajos
-              </h3>
-              <p class="subtitle-a">
-                
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-3.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Tesselar Soluciones SA de CV</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Advance Develope</span> / <span class="w-date">14 Sep. 2022 a la fecha</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="./tesselar.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-1.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Coco Colima SA de CV</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Coordinador de TI</span> / <span class="w-date">4 Sep. 2017 a 14 Sep. 2022</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="./Coco.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Surtidora Ferretera</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Jefe de sistemas</span> / <span class="w-date">23 Ene. 2017 a 4 Sep. 2017</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="./surti.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-             
-
-    
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        Ponerse en contacto
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                        Para mas informacion porfavor visita mi perfil de 
-                        linkedin o mi canal de youtube donde explico algunas cosas de las que soy capaz de realizar.
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="bi bi-geo-alt"></span> Villa de alvarez,Colima.</li>
-                        <li><span class="bi bi-phone"></span> (313) 147-0806</li>
-                        <li><span class="bi bi-envelope"></span> oscar_valladares@outlook.com</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <h5 class="title-left">
-                      Redes Sociales
-                    </h5>
-                    <div class="socials">
-                      
-                      <ul>
-                        <li>
-                          <a href="https://www.linkedin.com/in/oscar-eduardo-valladares-calleros-362157154/">
-                            <i class="bi bi-linkedin"></i>
-                            Oscar Valladares
-                        </a>
-                        </li>
-                        <li>
-                          <a href="https://www.youtube.com/c/TecnologiasMaster">
-                          <span class="bi bi-youtube"></span>
-                          TecnologiasMaster
-                        </a> 
-                        </li>
-                        <li>
-                          <a href="https://github.com/VallaMaister">
-                            <span class="bi bi-github"></span>
-                            VallaMaister
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  </section>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
@@ -437,10 +1022,43 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script>
+    // Typed.js for role animation
+    if (typeof Typed !== 'undefined') {
+      new Typed('#typed-role', {
+        strings: ['DevOps Engineer', 'Cloud Architect', 'Full Stack Developer', 'SAP Specialist', 'Automation Expert'],
+        typeSpeed: 80,
+        backSpeed: 50,
+        backDelay: 2000,
+        loop: true
+      });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('.modern-nav');
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 
